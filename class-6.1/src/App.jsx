@@ -57,10 +57,10 @@ setUsers(updateUsers)
   }
 
   return (
-    <div className='border-2 w-screen h-screen'>
-      <div className='border-2 border-blue-400 w-fit h-fit '>
-        <h2 className='mx-144 font-bold text-'>User Details</h2>
-      <form  className='flex justify-around' onSubmit={handleSubmit}>
+    <div className=' w-full h-screen '>
+      <div className='w-full px-6 py-2 flex flex-col justify-center items-center'>
+        <h2 className='font-bold text-'>User Details</h2>
+      <form  className='flex flex-col' onSubmit={handleSubmit}>
         <input
          type="text"
          name="name"
@@ -93,19 +93,21 @@ setUsers(updateUsers)
       
 
         {/* Cards */}
-        <div className='flex gap-2'>
+        <div className='flex flex-wrap px-10 py-10 gap-10'>
           {users.map((user, idx) => (
-  <div key={idx} className='border-2 w-40 h-50 rounded-2xl'>
+  <div key={idx}  className="bg-[#ffffffa7] flex flex-col border-2 w-[18vw] h-[25vw] items-center gap-3 rounded-2xl pt-5">
     {user.profile && (
-      <img src={user.profile} width="80" height="80" alt="profile" 
-      className='rounded-full border-2'
+      <img src={user.profile} alt="profile" 
+        className="rounded-full border-2 w-[8vw] h-[8vw]"
       />
     )}
-    <h3>Name:{user.name}</h3>
+    <h3 className='text-2xl text-center font-extrabold'>Name:{user.name}</h3>
     
-    <p>Profession:{user.profession}</p>
+    <p className='text-xl text-center '>Profession:{user.profession}</p>
 
-    <button onClick={() => handleDelete(idx)}>Delete</button>
+    <button onClick={() => handleDelete(idx)} 
+    className='px-4 py-2 mt-3'
+      >Delete</button>
   </div>
 ))}
         </div>
