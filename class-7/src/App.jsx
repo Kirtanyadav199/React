@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Card from "../components/Card";
 
 const App = () => {
   const [name, setName] = useState("");
@@ -10,8 +11,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   const newdata =  [...data, { name, image, role, description }];
-   setdata(newdata)
+   setdata([...data, { name, image, role, description }])
     
     setName("");
     setDescription("");
@@ -20,7 +20,11 @@ const App = () => {
       console.log(newdata);
   };
 
-  
+  const deleteHandler = (idx)=>{
+    const copyuser = [...data]
+    copyuser.splice(idx,1)
+    setdata(copyuser)
+  }
   return (
     <div className="h-screen w-screen text-white bg-black">
       <form
@@ -76,6 +80,11 @@ const App = () => {
           Submit
         </button>
       </form>
+      <div className="px-4 py-10 gap-4 flex flex-wrap" >
+        {data.map(function(elem,idx){
+          return <Card idx={idx} elem={elem} deleteHandler={deleteHandler}/>
+        })}
+      </div>
     </div>
   );
 };
