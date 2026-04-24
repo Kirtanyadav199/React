@@ -6,12 +6,18 @@ const App = () => {
   const [image, setImage] = useState("");
   const [role, setRole] = useState("");
   const [description, setDescription] = useState("");
-  const [data, setdata] = useState([]);
+
+   const localData = JSON.parse(localStorage.getItem('all-users')) || []
+
+  const [data, setdata] = useState(localData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   setdata([...data, { name, image, role, description }])
+   const oldUsers = [...data]
+   oldUsers.push({name,image,role,description})
+   setdata(oldUsers)
+   localStorage.setItem('all-users',JSON.stringify(oldUsers))
     
     setName("");
     setDescription("");
@@ -24,6 +30,7 @@ const App = () => {
     const copyuser = [...data]
     copyuser.splice(idx,1)
     setdata(copyuser)
+    localStorage.setItem('all-users',JSON.stringify(copyuser))
   }
   return (
     <div className="h-screen w-screen text-white bg-black">
