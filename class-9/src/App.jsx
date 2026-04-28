@@ -12,9 +12,9 @@ const response =  await axios.get('https://picsum.photos/v2/list')
   setallUsers(response.data)
   }
 
-  useEffect(function(){
-    getData()
-  },[])
+  // useEffect(function(){
+  //   getData()
+  // },[])
 
   return (
     <div>
