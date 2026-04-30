@@ -1,0 +1,14 @@
+React-router-dom
+
+- install react-router-dom 
+- in main.jsx "import {BrowserRouter} from 'react-router-dom' "
+- wrap <App/> by BrowserRouter in main.jsx file 
+- make <Routes> (collection of all route) and inside <Routes><Routes/> make <Route/>
+- in <Route/> mention path (where to go) and elements (what to render) attributes
+- In navbar use <Link/> tag to redirect to specific route (like a anchor tag)
+- Make navbar component as well and add it before <Routes/> in App.jsx
+
+- Nestes Routes can be made by writing in this way - path="/product/men"
+- Dynamic Routes can be made by writing this way - path="/product/:id"
+
+- You can access id by using {useParams} hook
