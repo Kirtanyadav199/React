@@ -11,4 +11,4 @@ React-router-dom
 - Nestes Routes can be made by writing in this way - path="/product/men"
 - Dynamic Routes can be made by writing this way - path="/product/:id"
 
-- You can access id by using {useParams} hook
+- You can access id by using {useParams} hook inside that component you rendered in dynamic route

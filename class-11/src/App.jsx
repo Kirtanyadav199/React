@@ -10,6 +10,7 @@ import Randompage from './pages/Randompage'
 import Course from './pages/Course'
 import Anycourse from './pages/Anycourse'
 import CourseDetail from './pages/CourseDetail'
+import NotFoundpage from './pages/NotFoundpage'
 
 const App = () => {
   return (
@@ -33,6 +34,10 @@ const App = () => {
          {/* nested dynamic routes */}
         <Route path='/courses/:courseid' element={<Anycourse/>} />
         <Route path='/courses/:courseid/detail' element={<CourseDetail/>}/>
+
+        {/* Not found page */}
+        <Route path='/*' element={<NotFoundpage/>} />
+
       </Routes>
     </div>
   )
