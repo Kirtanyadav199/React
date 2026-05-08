@@ -2,7 +2,7 @@ import React,{createContext} from 'react'
 
 
 export const UserDataContext = createContext()
-const UserContext = (props) => {
+const UserProvider = (props) => {
 
 const user = 'kirtan' 
 
@@ -13,4 +13,4 @@ const user = 'kirtan'
   )
 }
 
-export default UserContext
+export default UserProvider
